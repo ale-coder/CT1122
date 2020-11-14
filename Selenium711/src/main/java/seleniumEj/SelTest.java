@@ -15,6 +15,8 @@ public class SelTest {
 		System.setProperty("webdriver.chrome.driver", exePath + "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.cooltesters.com/tienda-de-cursos/selenium-con-java");
+		
+		
 	}
 
 }
