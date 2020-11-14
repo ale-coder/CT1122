@@ -7,5 +7,6 @@ public class TestNGEj {
   @Test
   public void f() {
 	  Assert.assertTrue(true);
+	  
   }
 }
