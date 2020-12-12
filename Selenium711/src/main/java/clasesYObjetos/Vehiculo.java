@@ -1,12 +1,12 @@
 package clasesYObjetos;
 
-public class Vehiculo {
+public class Vehiculo { //Clase
 	
-	//declara los objetos dentro de la clase como variables NO ES UN METODO PUBLICO
+	//No se marca el check de public. NO ES UN METODO PUBLICO
  
-	int pasajeros;
-	int capacidad;
-	int kmh;
+	int pasajeros; //Objetos se declaran como variables
+	int capacidad; //objeto
+	int kmh; //objeto
 	
 	
 }
