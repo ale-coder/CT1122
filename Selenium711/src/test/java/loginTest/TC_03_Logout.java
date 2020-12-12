@@ -6,6 +6,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import commonMethods.CommonMethods;
 import driverSetup.DriverSetup;
 import globalVariables.GlobalVariables;
 import navigationPages.DashboardPage;
@@ -38,6 +39,7 @@ public class TC_03_Logout {
 
 	@AfterTest
 	public void closeDriver() {
+		CommonMethods.takeScreenshot(driver, "TC_03_Logout");
 	  driver.quit();
 }
 	

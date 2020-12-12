@@ -3,14 +3,14 @@ package loginTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commonMethods.CommonMethods;
 import driverSetup.DriverSetup;
 import globalVariables.GlobalVariables;
 import navigationPages.LoginPage;
 
-public class TC_01_CorrectLogin {
+public class TC_06_ParameterLogin {
 	
 	//declarar inicializar web driver creando un obj(objeto como tal del tipo webdriver)
 	//importandolo desde la clase driversetup CTRL clic sobre setup para ir a la clase
@@ -30,16 +30,18 @@ public class TC_01_CorrectLogin {
 	}
 	
 	//LOS TEST
+	//correr desde una test suite nueva
 	
   @Test
-  public void TC_01() {
-	  login.login(GlobalVariables.USER_ADMIN, GlobalVariables.PASSWORD_ADMIN);
+  @Parameters({"user","password"}) //IMPORTAR ANNOTATIONS PACKAGE
+  public void TC_06(String user, String password) {
+	  //sTEP 1 LOGIN
+	  login.login(user, password);
 	  
   }
   
   @AfterTest
   public void closeDriver() {
-	  CommonMethods.takeScreenshot(driver, "TC_01_CorrectLogin");//IMPORTAR LIBRERIA
 	 // driver.quit();
   }
 }

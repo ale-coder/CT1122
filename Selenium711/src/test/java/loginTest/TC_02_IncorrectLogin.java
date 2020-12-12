@@ -6,6 +6,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import commonMethods.CommonMethods;
 import driverSetup.DriverSetup;
 import globalVariables.GlobalVariables;
 import navigationPages.LoginPage;
@@ -29,13 +30,14 @@ public class TC_02_IncorrectLogin {
 		
 	@Test
 	public void TC_02() {
-	boolean isTrue = login.incorrectLogin(GlobalVariables.USER_ADMIN, "admin123"); //CAMBIAR POR "IncorrectPassword" PARA QUE SALGA EL TEST CORRECTO
+	boolean isTrue = login.incorrectLogin(GlobalVariables.USER_ADMIN, "IncorrectPassword"); //CAMBIAR POR admin123 "IncorrectPassword" PARA QUE SALGA EL TEST CORRECTO
 	Assert.assertTrue(isTrue);
 	  
 	}
 
 	@AfterTest
 	public void closeDriver() {
+		CommonMethods.takeScreenshot(driver, "TC_02_IncorrectLogin");
 	  driver.quit();
 }
   
