@@ -12,13 +12,15 @@ import navigationPages.LoginPage;
 
 public class TC_02_IncorrectLogin {
 	
+	
+	//LINEA STANDARD
 	WebDriver driver = DriverSetup.setupDriver();
 	
-	//Login PageObject crear
+	//LINEA STANDARD Login PageObject crear
 	LoginPage login = new LoginPage(driver);
 	
 	@BeforeTest
-	//metodo que inicia wdriver
+	//LINEA STANDARD metodo que inicia wdriver
 	public void startWebDriver() {
 		driver.get(GlobalVariables.HOME_PAGE);
 		driver.manage().window().maximize();
@@ -27,7 +29,7 @@ public class TC_02_IncorrectLogin {
 		
 	@Test
 	public void TC_02() {
-	boolean isTrue = login.incorrectLogin(GlobalVariables.USER_ADMIN, "admin123");
+	boolean isTrue = login.incorrectLogin(GlobalVariables.USER_ADMIN, "admin123"); //CAMBIAR POR "IncorrectPassword" PARA QUE SALGA EL TEST CORRECTO
 	Assert.assertTrue(isTrue);
 	  
 	}

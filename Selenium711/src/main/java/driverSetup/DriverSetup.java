@@ -7,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverSetup {
+	
+	//CLASE POM
+	//no es main se ejecuta a traves de TestNG
 
-	public static WebDriver setupDriver() {
+	public static WebDriver setupDriver() { //metodo para ejecutar el driver
 		
 		
 		String exePath = Paths.get("").toAbsolutePath().toString() + File.separator + "Drivers" + File.separator;

@@ -7,17 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
+	//
 	
-	public DashboardPage(WebDriver driver) {
+	//Crear constructor
+	
+	public DashboardPage(WebDriver driver) { //IMPORTAR WEBDRIVER
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="welcome")
-	private WebElement welcomeDrpDwn;
-	@FindBy(xpath="//*[@id=\"welcome-menu\"]/ul/li[2]/a")
+	//OBJETOS DEL DASHBOARD
+	
+	@FindBy(id="welcome") //ELEMENTO DESDE EL QUE SE HACE LOGOUT
+	private WebElement welcomeDrpDwn; //NO ES DROPDOWN PERO POR LLAMARLO DE ALGUN MODO
+	@FindBy(xpath="//*[@id=\"welcome-menu\"]/ul/li[2]/a") //LINK DE LOGOUT IDENTIFICADO CON XPATH NO ESTA LARGO ES UTILIZABLE
 	private WebElement logoutBtn;
 	
-	public void logout() throws InterruptedException {
+	public void logout() throws InterruptedException { //EL METODO LA ACCION SOLO CLIC EN WELCOME DROPDOWN Y LUEGO CLIC EN LOGOOUT
 		Thread.sleep(1000);
 		welcomeDrpDwn.click();
 		Thread.sleep(1000);

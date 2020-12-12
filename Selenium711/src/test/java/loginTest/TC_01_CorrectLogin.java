@@ -11,14 +11,16 @@ import navigationPages.LoginPage;
 
 public class TC_01_CorrectLogin {
 	
-	//declarar inicializar web driver creando un obj(objeto como tal del tipo webdriver) importandolo desde la clase driversetup CTRL clic sobre setup para ir a la clase
-	//
+	//declarar inicializar web driver creando un obj(objeto como tal del tipo webdriver)
+	//importandolo desde la clase driversetup CTRL clic sobre setup para ir a la clase
+	
 	WebDriver driver = DriverSetup.setupDriver();
 	
 	//Login PageObject crear
 	LoginPage login = new LoginPage(driver);
 	
-	@BeforeTest
+	@BeforeTest //ACCIONES ANTES DE INICIAR EL TEST COMO INICIAR EL WEB DRIVER
+	
 	//metodo que inicia wdriver
 	public void startWebDriver() {
 		driver.get(GlobalVariables.HOME_PAGE);
@@ -26,7 +28,7 @@ public class TC_01_CorrectLogin {
 		
 	}
 	
-	
+	//LOS TEST
 	
   @Test
   public void TC_01() {
